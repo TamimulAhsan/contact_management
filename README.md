@@ -15,13 +15,18 @@ Install Requirements:
 
       pip install -r requirements.txt
 Run the Program:
+Linux:
 
       python3 contact_management.py
-
-
+Windows:
+      
+      python contact_management.py
+      
+      
 If You encounter error (No file exist) Create 'contacts.csv' and 'users.txt'
 #I will add functionality to check the os and auto create the files if not exist in the directory.
 
 Thanks for Reading.
-If you want to contribute, Make a Pull Request
+If you want to contribute, Make a Pull Request.
+
 Give a star if you like it.

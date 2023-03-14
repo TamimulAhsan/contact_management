@@ -24,8 +24,10 @@ Windows:
       python contact_management.py
       
       
-If You encounter error (No file exist) Create 'contacts.csv' and 'users.txt'
-#I will add functionality to check the os and auto create the files if not exist in the directory.
+If You encounter error (No file exist) Create 'contacts.csv' and 'users.txt'.
+
+
+I will add functionality to check the os and auto create the files if not exist in the directory.
 
 Thanks for Reading.
 If you want to contribute, Make a Pull Request.

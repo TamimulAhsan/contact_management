@@ -144,7 +144,7 @@ def login():
     while True:
         username = input(f"{Fore.BLUE}Enter your Username: {Fore.GREEN}")
         password = get_password(f"{Fore.BLUE}Enter your Password: {Fore.GREEN}")
-        if username == "tamim" and password =="verystrongpassword": #admin login
+        if username == "admin" and password =="admin": #admin login
             print(f"{Fore.LIGHTRED_EX}Logged in as Admin")
             time.sleep(2)
             admin_panel()

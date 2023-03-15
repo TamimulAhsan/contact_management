@@ -1,7 +1,4 @@
-csv
-sys
 time
-os
 random
 colorama
 msvcrt

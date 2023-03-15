@@ -27,7 +27,7 @@ Windows:
 
 # Note 
 You will be logged into admin panel if you use username:admin password:admin
-# If you wish to change it go to the login function, you'll find it there.
+If you wish to change it go to the login function, you'll find it there.
 
 If You encounter error (No file exist) Create 'contacts.csv' and 'users.txt'.
 

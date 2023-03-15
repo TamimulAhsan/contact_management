@@ -5,3 +5,4 @@ os
 random
 colorama
 msvcrt
+rich

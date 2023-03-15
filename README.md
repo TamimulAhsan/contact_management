@@ -3,7 +3,7 @@ A simple Contact Management Tool written in Python.
 This is still under Development and I am constantly updating the source code to add more functionality and features. Feel free to raise an issue. If you want to participate in the code feel free to make a pull request.
 
 
-#Installation:
+# Installation:
 
 Clone The Repository:
 

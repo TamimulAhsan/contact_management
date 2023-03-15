@@ -28,6 +28,8 @@ Windows:
 # Note 
 You will be logged into admin panel if you use username:admin password:admin.
 
+####This is running on windows only for now. For the 'msvcrt' module you can't run it on linux or Mac. I will Fix It asap.
+
 If you wish to change it go to the login function, you'll find it there.
 
 If You encounter error (No file exist) Create 'contacts.csv' and 'users.txt'.

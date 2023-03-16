@@ -3,8 +3,8 @@ import sys
 import time
 import os
 import random
-import colorama
 from getpass import getpass
+import colorama
 from colorama import Fore
 from rich.console import Console
 from rich.text import Text
@@ -36,7 +36,7 @@ def banner():
     8b         88  88  88 
     Y8b  d8    88  88  88 
      `Y88P'    YP  YP  YP 
-    Contact    Management
+    Contact    Management                
     '''
 
     d = '''
@@ -63,7 +63,7 @@ def banner():
     | $$    $$    | $$\  $ | $$
     |  $$$$$$/    | $$ \/  | $$
      \______/     |__/     |__/
-      Ontact        anagement 
+      Ontact        anagement                           
     '''
     banner_list = [a,b,c,d,e]
     random_num = random.randint(0,4)
@@ -157,7 +157,7 @@ def login():
     while True:
         username = input(f"{Fore.BLUE}Enter your Username: {Fore.GREEN}")
         password = get_password(f"{Fore.BLUE}Enter your Password: {Fore.GREEN}")
-        if username == "admin" and password =="admin": #admin login
+        if username == "tamim" and password =="verystrongpassword": #admin login
             print(f"\t\t{Fore.LIGHTRED_EX}Logged in as Admin")
             time.sleep(2)
             admin_panel()
@@ -171,7 +171,16 @@ def login():
                     main_menu_logged_in() # redirect to main menu
             else:
                 time.sleep(1)
-                print(f"{Fore.RED}Invalid username or password. Please try again.\n")
+                print(f"{Fore.RED}Invalid username or password.\n")
+                time.sleep(1)
+                while True:
+                    x = input(f'{Fore.BLUE}Try again?  y/n:{Fore.GREEN} ')
+                    if x.lower()=='y':
+                        login()
+                    elif x.lower() == 'n':
+                        main_menu_not_logged_in()
+                    else:
+                        print(f'{Fore.RED}Invalid Choice')
 
 ##############################################################
 
@@ -724,5 +733,28 @@ def admin_panel():
             time.sleep(1)
             admin_panel()
     
+
+if os.name=='nt':
+    t = [i for i in os.walk('.')]
+    if 'test.csv' not in t:
+        os.system("type nul > conatcts.csv")
+        with open("contacts.csv", "a", newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(['Name', 'Address', 'Contact', 'E-mail', 'Phone', 'Id_No'])
+
+    if 'test.txt' not in t:
+        os.system("type nul > users.txt")
+
+else:
+    t = [i for i in os.walk('.')]
+    if 'test.csv' not in t:
+        os.system("touch  contacts.csv")
+        with open("contacts.csv", "a", newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(['Name', 'Address', 'Contact', 'E-mail', 'Phone', 'Id_No'])
+
+    if 'test.txt' not in t:
+        os.system("touch users.txt")
+
 
 main_menu_not_logged_in() # Start the program. Not logged in as usual. Program starts here

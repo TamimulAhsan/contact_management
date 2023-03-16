@@ -36,7 +36,7 @@ def banner():
     8b         88  88  88 
     Y8b  d8    88  88  88 
      `Y88P'    YP  YP  YP 
-    Contact    Management                
+    Contact    Management
     '''
 
     d = '''
@@ -63,7 +63,7 @@ def banner():
     | $$    $$    | $$\  $ | $$
     |  $$$$$$/    | $$ \/  | $$
      \______/     |__/     |__/
-      Ontact        anagement                           
+      Ontact        anagement 
     '''
     banner_list = [a,b,c,d,e]
     random_num = random.randint(0,4)
@@ -91,7 +91,7 @@ def get_password(prompt):
                 password += key.decode("utf-8")
                 print("*", end="", flush=True)
     else:
-        password = getpass()
+        password = getpass('')
         return password
 
 ############################################################
@@ -157,7 +157,7 @@ def login():
     while True:
         username = input(f"{Fore.BLUE}Enter your Username: {Fore.GREEN}")
         password = get_password(f"{Fore.BLUE}Enter your Password: {Fore.GREEN}")
-        if username == "tamim" and password =="verystrongpassword": #admin login
+        if username == "admin" and password =="admin": #admin login
             print(f"\t\t{Fore.LIGHTRED_EX}Logged in as Admin")
             time.sleep(2)
             admin_panel()

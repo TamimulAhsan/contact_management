@@ -2,9 +2,9 @@ import csv
 import sys
 import time
 import os
-import msvcrt
 import random
 import colorama
+from getpass import getpass
 from colorama import Fore
 from rich.console import Console
 from rich.text import Text
@@ -74,21 +74,25 @@ def banner():
 def get_password(prompt):
     password = ""
     print(prompt, end="", flush=True)
-    while True:
-        key = msvcrt.getch() # for Windows OS
-        # key = termios.tcgetattr(sys.stdin) # for Unix-like OS
-        if key == b"\r" or key == b"\n":
-            print()
-            return password
-        elif key == b"\b":
-            if password:
-                password = password[:-1]
-                print("\b \b", end="", flush=True)
-        elif key == b"\x03":
-            raise KeyboardInterrupt
-        else:
-            password += key.decode("utf-8")
-            print("*", end="", flush=True)
+    if os.name == 'nt':
+        import msvcrt
+        while True:
+            key = msvcrt.getch() 
+            if key == b"\r" or key == b"\n":
+                print()
+                return password
+            elif key == b"\b":
+                if password:
+                    password = password[:-1]
+                    print("\b \b", end="", flush=True)
+            elif key == b"\x03":
+                raise KeyboardInterrupt
+            else:
+                password += key.decode("utf-8")
+                print("*", end="", flush=True)
+    else:
+        password = getpass()
+        return password
 
 ############################################################
 
@@ -153,7 +157,7 @@ def login():
     while True:
         username = input(f"{Fore.BLUE}Enter your Username: {Fore.GREEN}")
         password = get_password(f"{Fore.BLUE}Enter your Password: {Fore.GREEN}")
-        if username == "admin" and password =="admin": #admin login
+        if username == "tamim" and password =="verystrongpassword": #admin login
             print(f"\t\t{Fore.LIGHTRED_EX}Logged in as Admin")
             time.sleep(2)
             admin_panel()
@@ -606,6 +610,7 @@ def delete_user():
                     print(f"{Fore.RED}Invalid Choice.\n")
 
 
+##################################################################################
 
 # main menu while not logged in 
 def main_menu_not_logged_in():

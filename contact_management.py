@@ -737,7 +737,7 @@ def admin_panel():
 if os.name=='nt':
     t = [i for i in os.walk('.')]
     if 'test.csv' not in t:
-        os.system("type nul > conatcts.csv")
+        os.system("type nul > contacts.csv")
         with open("contacts.csv", "a", newline='') as file:
             writer = csv.writer(file)
             writer.writerow(['Name', 'Address', 'Contact', 'E-mail', 'Phone', 'Id_No'])

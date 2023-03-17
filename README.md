@@ -30,8 +30,6 @@ You will be logged into admin panel if you use username:admin password:admin.
 
 If you wish to change it go to the login function, you'll find it there.
 
-I will add functionality to check the os and auto create the files if not exist in the directory.
-
 Thanks for Reading.
 If you want to contribute, Make a Pull Request.
 
